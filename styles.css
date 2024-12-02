@@ -47,7 +47,7 @@ body {
         transform: translateX(0); /* 시작 위치 */
     }
     100% {
-        transform: translateX(-129%); /* 복제된 콘텐츠까지 이동 */
+        transform: translateX(-100%); /* 복제된 콘텐츠까지 이동 */
     }
 }
 
@@ -56,7 +56,7 @@ body {
         transform: translateX(0); /* 시작 위치 */
     }
     100% {
-        transform: translateX(124%); /* 복제된 콘텐츠까지 이동 */
+        transform: translateX(100%); /* 복제된 콘텐츠까지 이동 */
     }
 }
 
