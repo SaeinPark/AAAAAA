@@ -38,20 +38,20 @@ images.forEach((img, index) => {
     const originalSrc = img.src;
 
     const alternateImages = [
-        '아가씨.png', '아이, 토냐.png', '아나스타샤.png',
-        '아야와 마녀.png', '아이덴티티.png', '아바타.png',
-        '아메리칸 사이코.png',
-        '아가씨.png', '아이, 토냐.png', '아나스타샤.png',
-        '아야와 마녀.png', '아이덴티티.png', '아바타.png',
-        '아메리칸 사이코.png',
-        '아메리칸 셰프.png',
-        '아이언맨.png', '아이언 자이언트.png',
-        '아메리칸 스나이퍼.png', '아이즈 와이드 셧.png',
-        '아틀란티스.png', '아키라.png', '아쿠아맨.png',
-        '아메리칸 셰프.png',
-        '아이언맨.png', '아이언 자이언트.png',
-        '아메리칸 스나이퍼.png', '아이즈 와이드 셧.png',
-        '아틀란티스.png', '아키라.png','아쿠아맨.png'
+        'agassi.png', 'itonya.png', 'anastasia.png',
+        'aya.png', 'identity.png', 'avatar.png',
+        'americanpsycho.png',
+        'agassi.png', 'itonya.png', 'anastasia.png',
+        'aya.png', 'identity.png', 'avatar.png',
+        'americanpsycho.png',
+        'americanchef.png',
+        'ironman.png', 'irongiant.png',
+        'americansniper.png', 'eyeswideshut.png',
+        'atlantis.png', 'akira.png', 'aquaman.png',
+        'americanchef.png',
+        'ironman.png', 'irongiant.png',
+        'americansniper.png', 'eyeswideshut.png',
+        'atlantis.png', 'akira.png', 'aquaman.png',
     ];
 
     const parentRow = img.closest('.row');
