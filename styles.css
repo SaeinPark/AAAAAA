@@ -6,7 +6,7 @@ body {
     align-items: center;
     min-height: 100vh;
     position: relative; /* 레터박스와 콘텐츠를 겹칠 수 있도록 설정 */
-    background-color: #d6d6d6; /* 배경 검정 */
+    background-color: #c9c9c9; /* 배경 검정 */
     overflow: hidden; /* 화면 밖 콘텐츠 숨김 */
 }
 
@@ -92,6 +92,7 @@ body::after {
         -2.5px 2.5px 0 black,  /* 왼쪽 아래 그림자 */
         2.5px -2.5px 0 black;  /* 오른쪽 위 그림자 */
     letter-spacing: 4px;
+    font-style: oblique;
 }
 
 .text-box {
