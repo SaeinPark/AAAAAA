@@ -146,3 +146,38 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+// 랜덤한 점과 선을 생성하는 함수
+function createRandomEffect() {
+    const effectContainer = document.getElementById('film-effect');
+
+    // 랜덤한 위치 계산
+    const randomX = Math.random() * window.innerWidth;
+    const randomY = Math.random() * window.innerHeight;
+
+    // 랜덤하게 점 또는 선 생성
+    const isDot = Math.random() > 0.5;
+    const element = document.createElement('div');
+    element.className = isDot ? 'effect-dot' : 'effect-line';
+
+    // 위치 설정
+    element.style.left = `${randomX}px`;
+    if (isDot) {
+        element.style.top = `${randomY}px`;
+    } else {
+        element.style.top = '0'; // 선은 화면 위에서 시작
+    }
+
+    // 랜덤 색상 (검정 또는 흰색)
+    const randomColor = Math.random() > 0.5 ? 'white' : 'black';
+    element.style.backgroundColor = randomColor;
+
+    // 추가하고 잠시 후 제거
+    effectContainer.appendChild(element);
+    setTimeout(() => {
+        effectContainer.removeChild(element);
+    }, 500); // 500ms 후 제거 (CSS 애니메이션과 동기화)
+}
+
+// 일정 간격으로 효과 생성
+setInterval(createRandomEffect, 100); // 100ms마다 효과 생성

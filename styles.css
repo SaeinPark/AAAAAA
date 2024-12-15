@@ -134,3 +134,34 @@ body::after {
     border: none;
     animation: floatEffect 3s ease-in-out infinite;
 }
+
+.effect-dot,
+.effect-line {
+    position: absolute;
+    background-color: white; /* 흰색 점과 선 */
+    opacity: 0; /* 기본적으로 보이지 않음 */
+    animation: fade-out 0.5s ease forwards; /* 서서히 사라지는 애니메이션 */
+}
+
+.effect-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%; /* 점은 원형 */
+    z-index: 3;
+}
+
+.effect-line {
+    width: 2px;
+    height: 2000vh; /* 선의 길이 */
+    z-index: 3;
+}
+
+/* 사라지는 애니메이션 */
+@keyframes fade-out {
+    0% {
+        opacity: 0.4;
+    }
+    100% {
+        opacity: 0;
+    }
+}
