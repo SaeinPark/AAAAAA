@@ -5,14 +5,40 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #f0f0f0;
+    position: relative; /* 레터박스와 콘텐츠를 겹칠 수 있도록 설정 */
+    background-color: #d6d6d6; /* 배경 검정 */
     overflow: hidden; /* 화면 밖 콘텐츠 숨김 */
+}
+
+/* 상단과 하단 레터박스 */
+body::before,
+body::after {
+    content: ""; /* 필수: 가상 요소 생성 */
+    position: absolute; /* 위치를 절대값으로 지정 */
+    left: 0;
+    width: 100%; /* 화면 전체 너비 */
+    height: 8%; /* 레터박스 높이 (필요에 따라 조정) */
+    background-color: #121212; /* 레터박스 색상 */
+    z-index: 1; /* 콘텐츠 위로 표시되도록 설정 */
+}
+
+/* 상단 레터박스 위치 */
+body::before {
+    top: 0;
+}
+
+/* 하단 레터박스 위치 */
+body::after {
+    bottom: 0;
 }
 
 .container {
     position: relative;
+    top: 50px;
     width: 100%; /* 화면 전체 너비 */
     height: auto; /* 컨테이너 높이 자동 조정 */
+    z-index: 2; /* 레터박스 위로 콘텐츠 표시 */
+    color: white;
 }
 
 .row {
@@ -21,13 +47,8 @@ body {
     align-items: center;
     position: relative;
     white-space: nowrap; /* 줄 넘김 방지 */
-    animation: slideLeftToRightLoop 5s linear infinite;
+    animation: slideLeftToRightLoop 23s linear infinite;
     animation-play-state: running; /* 기본 애니메이션 실행 상태 */ㅋ
-}
-
-.row:nth-child(2) {
-    justify-content: flex-end;
-    animation: slideRightToLeftLoop 5s linear infinite; /* 오른쪽에서 왼쪽으로 이동 */
 }
 
 .row img {
@@ -44,29 +65,33 @@ body {
 
 @keyframes slideLeftToRightLoop {
     0% {
-        transform: translateX(0); /* 시작 위치 */
+        transform: translateX(0%); /* 시작 위치 */
     }
     100% {
-        transform: translateX(-100%); /* 복제된 콘텐츠까지 이동 */
+        transform: translateX(-400%); /* 복제된 콘텐츠까지 이동 */
     }
 }
 
-@keyframes slideRightToLeftLoop {
-    0% {
-        transform: translateX(0); /* 시작 위치 */
-    }
-    100% {
-        transform: translateX(100%); /* 복제된 콘텐츠까지 이동 */
-    }
+@font-face {
+    font-family: 'ChosunGu';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGu.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
 .text {
-    margin-top: 10px; /* 텍스트와 컨테이너 사이 간격 */
-    font-size: 30px; /* 텍스트 크기 */
+    margin-top: 70px; /* 텍스트와 컨테이너 사이 간격 */
+    font-size: 45px; /* 텍스트 크기 */
     font-weight: bold; /* 텍스트 굵게 */
-    color: #333; /* 텍스트 색상 */
-    text-align: right; /* 텍스트 오른쪽 정렬 */
-    font-family: 'Noto Serif KR', serif; /* 폰트 설정 */
+    color: white; /* 텍스트 색상 */
+    text-align: center; /* 텍스트 오른쪽 정렬 */
+    font-family: 'ChosunGu'; /* 폰트 설정 */
+    text-shadow: 
+        2.5px 2.5px 0 black,  /* 오른쪽 아래 그림자 */
+        -2.5px -2.5px 0 black, /* 왼쪽 위 그림자 */
+        -2.5px 2.5px 0 black,  /* 왼쪽 아래 그림자 */
+        2.5px -2.5px 0 black;  /* 오른쪽 위 그림자 */
+    letter-spacing: 4px;
 }
 
 .text-box {
@@ -83,4 +108,28 @@ body {
     font-weight: bold;
     text-align: center;
     z-index: 1000;
+}
+
+@keyframes floatEffect {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-60px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.row img {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    max-width: 20%;
+    max-height: 20%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    animation: floatEffect 3s ease-in-out infinite;
 }
