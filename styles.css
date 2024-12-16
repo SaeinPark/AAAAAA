@@ -96,20 +96,27 @@ body::after {
 }
 
 .text-box {
-    display: none; /* 기본적으로 숨김 */
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 550px; /* 프레임 크기에 맞게 조정 */
+    height: 300px;
     padding: 20px;
-    border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 0; /* 프레임은 둥글지 않게 */
+    background: url('frame.png') no-repeat center center; /* 프레임 이미지 적용 */
+    background-size: cover; /* 프레임 이미지 크기 맞춤 */
+    box-shadow: none; /* 기존 그림자 제거 */
+    color: black; /* 텍스트 색상 */
     font-size: 16px;
     font-weight: bold;
     text-align: center;
     z-index: 1000;
+    display: block;
+    font-family: 'Noto Serif KR', serif;
+    background-color: rgba(255,255,255,0.6);
 }
+
 
 @keyframes floatEffect {
     0% {
